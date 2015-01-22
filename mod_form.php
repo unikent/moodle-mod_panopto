@@ -46,19 +46,4 @@ class mod_panopto_mod_form extends moodleform_mod
 
         $this->add_action_buttons(true, false, null);
     }
-
-    /**
-     * Form validation.
-     */
-    public function validation($data, $files) {
-        $errors = parent::validation($data, $files);
-
-        preg_match('#http://panoptonational.net/record/([0-9]*)/media_id/([0-9]*)#', $data['url'], $matches);
-
-        if (count($matches) !== 3) {
-            $errors['url'] = get_string('invalidurl', 'url');
-        }
-
-        return $errors;
-    }
 }
