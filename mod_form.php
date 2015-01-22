@@ -32,6 +32,8 @@ class mod_panopto_mod_form extends moodleform_mod
      * Form definition.
      */
     public function definition() {
+        global $COURSE, $CFG, $DB, $PAGE;
+
         $mform = $this->_form;
 
         $mform->addElement('text', 'name', 'Title', array('size' => '60'));
@@ -39,12 +41,27 @@ class mod_panopto_mod_form extends moodleform_mod
         $mform->addRule('name', null, 'required', null, 'client');
 
         $mform->addElement('url', 'externalid', 'Panopto Video ID', array('size' => '60'), array('usefilepicker' => false));
-        $mform->setType('externalid', PARAM_URL);
+        $mform->setType('externalid', PARAM_TEXT);
         $mform->addRule('externalid', null, 'required', null, 'client');
 
         $this->add_intro_editor();
         $this->standard_coursemodule_elements();
 
         $this->add_action_buttons(true, false, null);
+
+        $server = $CFG->panopto_server;
+        $coursefolder = null;
+
+        if (isset($COURSE->id)) {
+            $panoptorecord = $DB->get_record('block_panopto_foldermap', array(
+                'moodleid' => $COURSE->id
+            ));
+            if ($panoptorecord) {
+                $server = $panoptorecord->panopto_id;
+                $coursefolder = $panoptorecord->panopto_server;
+            }
+        }
+
+        $PAGE->requires->yui_module('moodle-mod_panopto-form', 'M.mod_panopto.form.init', array($server, $coursefolder));
     }
 }

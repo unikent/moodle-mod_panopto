@@ -33,5 +33,5 @@ $string['pluginname'] = 'Panopto';
 $string['panopto:view'] = 'View Panopto Video';
 $string['panopto:addinstance'] = 'Add a new Panopto video';
 
-$string['serverhost'] = 'Server name';
-$string['configserverhost'] = 'The hostname of your Panopto server.';
+$string['serverhost'] = 'Default server name';
+$string['configserverhost'] = 'The hostname of your Panopto server when there isnt a folder mapping already.';
