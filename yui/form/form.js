@@ -71,7 +71,7 @@ YUI.add('moodle-mod_panopto-form', function(Y) {
 					// Ask for more data.
 					var win = document.getElementById("panopto-iframe").contentWindow,
 					message = { cmd: "createEmbeddedFrame" };
-					win.postMessage(JSON.stringify(message), 'https://' + this.servername);
+					win.postMessage(JSON.stringify(message), 'https://' + parent.servername);
 					modal.hide();
 	            }
 
