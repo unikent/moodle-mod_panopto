@@ -42,7 +42,7 @@ class mod_panopto_mod_form extends moodleform_mod
         $mform->setType('url', PARAM_URL);
         $mform->addRule('url', null, 'required', null, 'client');
 
-        $this->add_intro_editor(true, 'Description');
+        $this->add_intro_editor();
         $this->standard_coursemodule_elements();
 
         $this->add_action_buttons(true, false, null);
