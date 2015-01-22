@@ -74,12 +74,11 @@ function panopto_delete_instance($id) {
 
 /**
  * Returns an embed method for the given video.
- * 
- * @param  [type] $video [description]
- * @return [type]        [description]
  */
 function panopto_get_embed($video) {
-    return "<iframe src=\"{$video->url}\" width=\"450\" height=\"300\" frameborder=\"0\"></iframe>";
+    global $CFG;
+
+    return "<iframe src=\"https://{$CFG->panopto_server}/Panopto/Pages/Embed.aspx?id={$video->externalid}\" width=\"450\" height=\"300\" frameborder=\"0\"></iframe>";
 }
 
 /**

@@ -38,9 +38,9 @@ class mod_panopto_mod_form extends moodleform_mod
         $mform->setType('name', PARAM_TEXT);
         $mform->addRule('name', null, 'required', null, 'client');
 
-        $mform->addElement('url', 'url', 'Panopto URL', array('size' => '60'), array('usefilepicker' => false));
-        $mform->setType('url', PARAM_URL);
-        $mform->addRule('url', null, 'required', null, 'client');
+        $mform->addElement('url', 'externalid', 'Panopto Video ID', array('size' => '60'), array('usefilepicker' => false));
+        $mform->setType('externalid', PARAM_URL);
+        $mform->addRule('externalid', null, 'required', null, 'client');
 
         $this->add_intro_editor();
         $this->standard_coursemodule_elements();
