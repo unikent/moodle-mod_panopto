@@ -57,8 +57,8 @@ class mod_panopto_mod_form extends moodleform_mod
                 'moodleid' => $COURSE->id
             ));
             if ($panoptorecord) {
-                $server = $panoptorecord->panopto_id;
-                $coursefolder = $panoptorecord->panopto_server;
+                $server = $panoptorecord->panopto_server;
+                $coursefolder = $panoptorecord->panopto_id;
             }
         }
 
