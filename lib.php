@@ -37,7 +37,6 @@ defined('MOODLE_INTERNAL') || die();
 function panopto_add_instance($data) {
     global $DB;
 
-    $data->name = $data->title;
     $data->timemodified = time();
     return $DB->insert_record("panopto", $data);
 }
@@ -48,9 +47,11 @@ function panopto_add_instance($data) {
 function panopto_update_instance($data, $mform) {
     global $DB;
 
-    $data->name = $data->title;
+    $data->id = $data->instance;
     $data->timemodified = time();
-    return $DB->update_record("panopto", $data);
+    $DB->update_record("panopto", $data);
+
+    return true;
 }
 
 /**

@@ -34,14 +34,15 @@ class mod_panopto_mod_form extends moodleform_mod
     public function definition() {
         $mform = $this->_form;
 
-        $mform->addElement('text', 'title', 'Title', array('size' => '60'));
-        $mform->setType('title', PARAM_TEXT);
-        $mform->addRule('title', null, 'required', null, 'client');
+        $mform->addElement('text', 'name', 'Title', array('size' => '60'));
+        $mform->setType('name', PARAM_TEXT);
+        $mform->addRule('name', null, 'required', null, 'client');
 
         $mform->addElement('url', 'url', 'Panopto URL', array('size' => '60'), array('usefilepicker' => false));
         $mform->setType('url', PARAM_URL);
         $mform->addRule('url', null, 'required', null, 'client');
 
+        $this->add_intro_editor(true, 'Description');
         $this->standard_coursemodule_elements();
 
         $this->add_action_buttons(true, false, null);
