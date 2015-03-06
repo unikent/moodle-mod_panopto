@@ -31,7 +31,7 @@ class backup_panopto_activity_structure_step extends backup_activity_structure_s
         // Define each element separated.
         $panopto = new backup_nested_element('panopto', array('id'), array(
             'name',
-            'url',
+            'externalid',
             'intro',
             'introformat',
             'timemodified'
