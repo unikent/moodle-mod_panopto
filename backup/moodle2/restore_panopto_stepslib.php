@@ -44,7 +44,7 @@ class restore_panopto_activity_structure_step extends restore_activity_structure
         $data = (object)$data;
         $oldid = $data->id;
         $data->course = $this->get_courseid();
-        $data->timemodified = time();
+        $data->timemodified = $this->apply_date_offset($data->timemodified);
 
         // Insert the panopto record.
         $newitemid = $DB->insert_record('panopto', $data);

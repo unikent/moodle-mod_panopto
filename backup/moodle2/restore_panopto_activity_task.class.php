@@ -53,9 +53,10 @@ class restore_panopto_activity_task extends restore_activity_task {
 
         $contents[] = new restore_decode_content('panopto', array(
             'name',
-            'url',
+            'externalid',
             'intro',
-            'introformat'
+            'introformat',
+            'timemodified'
         ), 'panopto');
 
         return $contents;

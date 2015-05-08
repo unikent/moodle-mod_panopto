@@ -23,8 +23,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['modulename'] = 'Panopto Video';
-$string['modulenameplural'] = 'Panopto Videos';
+$string['modulename'] = 'Video - Panopto';
+$string['modulenameplural'] = 'Videos - Panopto';
 $string['modulename_help'] = 'The Panopto module enables you to embed Panopto clips into your course.';
 
 $string['pluginadministration'] = 'Panopto administration';

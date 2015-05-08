@@ -13,7 +13,7 @@ YUI.add('moodle-mod_panopto-form', function(Y) {
             this.servername = servername;
             this.coursefolder = coursefolder;
 
-            var button = Y.Node.create("<button>Select/Upload Video</button>");
+            var button = Y.Node.create("<button>Select Video</button>");
             button.on('click', this.handle_button_click, this);
 
             Y.one('#fitem_id_externalid .felement').append(button);
@@ -60,7 +60,6 @@ YUI.add('moodle-mod_panopto-form', function(Y) {
 	        var messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
 
 	        eventEnter(messageEvent, function (e) {
-	        	console.log(e);
 	            var message = JSON.parse(e.data);
 
 	            if (message.cmd === 'notReady') {
@@ -71,7 +70,7 @@ YUI.add('moodle-mod_panopto-form', function(Y) {
 					// Ask for more data.
 					var win = document.getElementById("panopto-iframe").contentWindow,
 					message = { cmd: "createEmbeddedFrame" };
-					win.postMessage(JSON.stringify(message), 'https://' + this.servername);
+					win.postMessage(JSON.stringify(message), 'https://' + parent.servername);
 					modal.hide();
 	            }
 
@@ -88,7 +87,6 @@ YUI.add('moodle-mod_panopto-form', function(Y) {
 		},
 
 		handle_id: function(videoid) {
-			console.log("SETTING ID " + videoid);
 			var elem = Y.one('#id_externalid');
 			elem.set('value', videoid);
 		},

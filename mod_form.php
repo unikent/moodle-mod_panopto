@@ -44,7 +44,12 @@ class mod_panopto_mod_form extends moodleform_mod
         $mform->setType('externalid', PARAM_TEXT);
         $mform->addRule('externalid', null, 'required', null, 'client');
 
-        $this->add_intro_editor();
+        if (method_exists($this, 'standard_intro_elements')) {
+            $this->standard_intro_elements();
+        } else {
+            $this->add_intro_editor();
+        }
+
         $this->standard_coursemodule_elements();
 
         $this->add_action_buttons(true, false, null);
@@ -57,8 +62,8 @@ class mod_panopto_mod_form extends moodleform_mod
                 'moodleid' => $COURSE->id
             ));
             if ($panoptorecord) {
-                $server = $panoptorecord->panopto_id;
-                $coursefolder = $panoptorecord->panopto_server;
+                $server = $panoptorecord->panopto_server;
+                $coursefolder = $panoptorecord->panopto_id;
             }
         }
 
