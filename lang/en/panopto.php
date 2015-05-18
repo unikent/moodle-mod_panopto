@@ -23,9 +23,9 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['modulename'] = 'Video - Panopto';
-$string['modulenameplural'] = 'Videos - Panopto';
-$string['modulename_help'] = 'The Panopto module enables you to embed Panopto clips into your course.';
+$string['modulename'] = 'Video - KentPlayer';
+$string['modulenameplural'] = 'Videos - KentPlayer';
+$string['modulename_help'] = 'Allows you to link to individual recordings from any KentPlayer folder you have access to (including your own "unlisted recordings" folder).';
 
 $string['pluginadministration'] = 'Panopto administration';
 $string['pluginname'] = 'Panopto';
