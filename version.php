@@ -24,7 +24,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2015051300;       // The current module version (Date: YYYYMMDDXX)
+$plugin->version   = 2015060500;       // The current module version (Date: YYYYMMDDXX)
 $plugin->requires  = 2014050800;    // Requires this Moodle version
 $plugin->component = 'mod_panopto'; // Full name of the plugin (used for diagnostics)
-$plugin->cron      = 0;
