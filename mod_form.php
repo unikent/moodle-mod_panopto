@@ -44,11 +44,7 @@ class mod_panopto_mod_form extends moodleform_mod
         $mform->setType('externalid', PARAM_TEXT);
         $mform->addRule('externalid', null, 'required', null, 'client');
 
-        if (method_exists($this, 'standard_intro_elements')) {
-            $this->standard_intro_elements();
-        } else {
-            $this->add_intro_editor();
-        }
+        $this->standard_intro_elements();
 
         $this->standard_coursemodule_elements();
 
